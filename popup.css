@@ -1,0 +1,14 @@
+body {
+    width: 200px;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  p {
+    font-size: 1em;
+    color: #555;
+  }
+  
