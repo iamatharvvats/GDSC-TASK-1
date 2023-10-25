@@ -1,14 +1,12 @@
 # GDSC-TASK-1 - 
-Creating a fully functional Chrome Extension involves several components: manifest files, background scripts, content scripts, and user interfaces. 
-Step 1: Set Up Your Project
+Creating a fully functional Chrome Extension involves several components: manifest files, background scripts, content scripts, and user interfaces. <br>
+Step 1: Set Up Your Project<br>
 Create a new folder for your extension and inside it, create the following files:
 
 1. manifest.json: This file contains metadata about the extension and points to the scripts and resources.
-<br>
 2. background.js: This script runs in the background and manages the extension's behavior.
-
 3. content.js: This script runs in the context of web pages and can manipulate DOM elements.
-
+<br>
 The manifest.json file is a crucial part of any Chrome extension.
 It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.
 <br>
