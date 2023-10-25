@@ -4,7 +4,7 @@ Step 1: Set Up Your Project
 Create a new folder for your extension and inside it, create the following files:
 
 1. manifest.json: This file contains metadata about the extension and points to the scripts and resources.
-
+<br>
 2. background.js: This script runs in the background and manages the extension's behavior.
 
 3. content.js: This script runs in the context of web pages and can manipulate DOM elements.
