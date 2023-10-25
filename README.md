@@ -11,25 +11,25 @@ Create a new folder for your extension and inside it, create the following files
 
 The manifest.json file is a crucial part of any Chrome extension.
 It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.
-
+<br>
 Manifest.json file :-
 The manifest.json file is a crucial part of any Chrome extension.<br>
-It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.
-Explanation of Manifest Properties:
-manifest_version: Specifies the version of the Chrome extension manifest file. In this case, it's version 3.
-name: The name of your extension as it appears in the Chrome Extensions page.
-version: The version number of your extension. You can update this whenever you release a new version of your extension.
-permissions: An array specifying the permissions required by your extension. 
-In this case, the extension requests permissions to interact with tabs, access active tab details, use storage, and listen for web navigation events.
-icons: An object specifying the icons used for your extension. The "48" key indicates a 48x48-pixel icon named "icon.png". 
-Icons are used in various places, such as the toolbar and the Extensions page.
-background: Specifies the background script for your extension. In this case, a service worker script named "background.js" is used. 
-The background script runs in the background, allowing your extension to respond to events even when the popup is closed.
-content_scripts: An array of content scripts that are injected into web pages. 
-In this case, a content script named "content.js" is injected into all URLs ("<all_urls>"). Content scripts can manipulate the DOM and interact with web pages.
-action: Specifies the browser action for your extension, which typically appears as a clickable icon in the browser toolbar. 
-The "default_popup" property indicates the HTML file (popup.html) that will be shown when the user clicks the extension icon. 
-The "default_icon" property specifies the icon used for the browser action.
+It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.<br>
+Explanation of Manifest Properties:<br>
+manifest_version: Specifies the version of the Chrome extension manifest file. In this case, it's version 3.<br>
+name: The name of your extension as it appears in the Chrome Extensions page.<br>
+version: The version number of your extension. You can update this whenever you release a new version of your extension.<br>
+permissions: An array specifying the permissions required by your extension. <br>
+In this case, the extension requests permissions to interact with tabs, access active tab details, use storage, and listen for web navigation events.<br>
+icons: An object specifying the icons used for your extension. The "48" key indicates a 48x48-pixel icon named "icon.png". <br>
+Icons are used in various places, such as the toolbar and the Extensions page.<br>
+background: Specifies the background script for your extension. In this case, a service worker script named "background.js" is used. <br>
+The background script runs in the background, allowing your extension to respond to events even when the popup is closed.<br>
+content_scripts: An array of content scripts that are injected into web pages. <br>
+In this case, a content script named "content.js" is injected into all URLs ("<all_urls>"). Content scripts can manipulate the DOM and interact with web pages.<br>
+action: Specifies the browser action for your extension, which typically appears as a clickable icon in the browser toolbar. <br>
+The "default_popup" property indicates the HTML file (popup.html) that will be shown when the user clicks the extension icon.<br> 
+The "default_icon" property specifies the icon used for the browser action.<br>
 
 Explanation of the background.js script:
 ```
@@ -79,31 +79,33 @@ This line creates a new tab group for the tab specified by tabId (the active tab
 ```
 chrome.tabGroups.update(group, { title: domain }, function(updatedGroup) {
 ```
-If the group creation is successful, it updates the title of the newly created group to the extracted domain. As with the previous chrome.tabGroups.update call, error handling is included.
+If the group creation is successful, it updates the title of the newly created group to the extracted domain. As with the previous chrome.tabGroups.update call, error handling is included.<br>
 } else {
-This branch handles errors if there are any issues when creating the group or updating the group title.
+This branch handles errors if there are any issues when creating the group or updating the group title.<br>
 } else {
-This line handles the case where the URL is not valid. If the URL is not valid, it logs an error message to the console. This is useful for debugging or handling invalid URLs.
+This line handles the case where the URL is not valid. If the URL is not valid, it logs an error message to the console. This is useful for debugging or handling invalid URLs.<br>
 ```
 function isValidUrl(url) {
 ```
-This line defines a function named isValidUrl that checks if a URL is valid.
+This line defines a function named isValidUrl that checks if a URL is valid.<br>
 try {
-The try block attempts to create a URL object from the provided URL string.
+The try block attempts to create a URL object from the provided URL string.<br>
 new URL(url);
-This line creates a URL object from the URL string. If the URL is not valid, it will throw an error.
-return true;
-If creating a URL object is successful (i.e., the URL is valid), the function returns true.
-} catch (error) {
-The catch block captures any errors that occur when trying to create a URL object.
-return false;
-If an error occurs, the function returns false, indicating that the URL is not valid.
-This background.js script handles tab grouping and title updating for active tabs in your Chrome extension. It also includes error handling to address potential issues during the process.
-Here's an explanation of each line of the content.js script:
+This line creates a URL object from the URL string. If the URL is not valid, it will throw an error.<br>
+return true;<br>
+If creating a URL object is successful (i.e., the URL is valid), the function returns true.<br>
+} catch (error) {<br>
+The catch block captures any errors that occur when trying to create a URL object.<br>
+return false;<br>
+If an error occurs, the function returns false, indicating that the URL is not valid.<br>
+This background.js script handles tab grouping and title updating for active tabs in your Chrome extension. It also includes error handling to address potential issues during the process.<br>
+***********************************************************************************************************************************************************************
+Here's an explanation of each line of the content.js script:<br>
 ```
-const body = document.body;
-const domain = window.location.hostname;
+const body = document.body;<br>
+const domain = window.location.hostname;<br>
 ```
+<br>
 1.) First line selects the <body> element of the current webpage and stores it in the variable body. 
 It allows the script to manipulate the body content of the webpage.
 2.) Next  line retrieves the hostname (domain) of the current webpage's URL using window.location.hostname. 
@@ -148,10 +150,11 @@ observer.observe(body, { childList: true, subtree: true });
 This line instructs the MutationObserver to start observing changes in the specified DOM element (body). 
 The options passed ({ childList: true, subtree: true }) indicate that the observer should watch for changes in the child nodes and 
 the entire subtree (nested elements) of the specified element.
+<br>
 In summary, the content.js script adds a specific CSS class to the <body> element of the webpage based on its domain. 
 Additionally, it uses a MutationObserver to dynamically add the same CSS class to any new elements added to the DOM, ensuring consistent 
 styling across the entire webpage, including newly loaded or dynamically generated content.
-
+<br>
 Certainly! popup.html<link rel="stylesheet" href="popup.css">: 
 Links an external CSS file (popup.css) for styling the popup content. is an HTML file that defines the structure and content of the popup window displayed
 when a user clicks the extension icon in the Chrome toolbar. 
