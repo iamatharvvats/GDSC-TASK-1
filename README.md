@@ -1,4 +1,4 @@
-# GDSC-TASK-1 - 
+# GDSC-TASK-1 Chrome Extension Development- 
 Creating a fully functional Chrome Extension involves several components: manifest files, background scripts, content scripts, and user interfaces. <br>
 Step 1: Set Up Your Project<br>
 Create a new folder for your extension and inside it, create the following files:
