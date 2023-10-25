@@ -13,7 +13,7 @@ The manifest.json file is a crucial part of any Chrome extension.
 It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.
 
 Manifest.json file :-
-The manifest.json file is a crucial part of any Chrome extension.
+The manifest.json file is a crucial part of any Chrome extension.<br>
 It provides essential metadata about the extension to the Chrome browser, defining its permissions, capabilities, and how it should behave.
 Explanation of Manifest Properties:
 manifest_version: Specifies the version of the Chrome extension manifest file. In this case, it's version 3.
